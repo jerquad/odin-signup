@@ -1,0 +1,258 @@
+@font-face {
+    font-family: "aBigDeal";
+    src: url("./fonts/aBigDeal.ttf");
+}
+
+:root {
+    --logo-red: rgb(238, 16, 16);
+    --logo-green: rgb(22, 139, 22);
+    --logo-top: .75em;
+    --logo-red-left: .75em;
+    --logo-green-left: 1.5em;
+    --logo-space: 1.5em;
+}
+
+body {
+    background-color: rgb(118, 146, 118);
+    margin: 0;
+    height: 98vh;
+    align-items: center;
+}
+
+body,
+.flex,
+.flex-col {
+    display: flex;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+#panel-left {
+    position: relative;
+    border-radius: 20px 0px 0 20px;
+    background-color: #c6cec8;
+    background-image: url("./img/kamenside.png");
+    background-size: contain;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    min-width: 20em;
+    min-height: 45em;
+}
+
+#main {
+    background-color: #c6cec8;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+    flex-grow: 1;
+    max-width: 80%;
+    border-radius: 20px;
+
+}
+
+.flyer {
+    font-family: 'aBigDeal';
+    font-size: 3em;
+    padding-top: 6px;
+    padding-left: 1rem;
+    height: 50px;
+    position: absolute;
+    transform: rotate(-5deg);
+    z-index: 1;
+}
+
+.flyer:before,
+.flyer:after {
+    position:absolute;
+    top: 0;
+    border-top: 28px solid transparent;
+    border-bottom: 28px solid transparent;
+    content: "";
+    width: 0;
+    height:0
+}
+
+.flyer:before {
+    border-left: 28px solid transparent;
+    left: -27px;
+}
+
+.flyer:after {
+    border-right: 28px solid transparent;
+    left: calc(100% - 1px);
+}
+
+.shadow {
+    background-color: black;
+    z-index: 0;
+}
+
+.shadow:before,
+.shadow:after {
+    border-top-color: black;
+    border-bottom-color: black;
+}
+
+#panel-left :nth-child(4n + 2) {
+    left: calc(var(--logo-red-left) + .2em)
+}
+
+#panel-left :nth-child(4n + 4) {
+    left: calc(var(--logo-green-left) + .2em)
+}
+
+.fly-red {
+    background-color: var(--logo-red);
+    left: calc(var(--logo-red-left));
+}
+.fly-red:before,
+.fly-red:after {
+    border-top-color: var(--logo-red);
+    border-bottom-color: var(--logo-red);
+}
+
+.fly-green {
+    background-color: var(--logo-green);
+    left: calc(var(--logo-green-left));
+}
+
+.fly-green:before,
+.fly-green:after {
+    border-top-color: var(--logo-green);
+    border-bottom-color: var(--logo-green);
+}
+
+#logo-1,
+#logo-1-shadow {
+    width: 13.5rem;
+}
+
+#logo-1 {
+    top: var(--logo-top);
+}
+
+#logo-1-shadow {
+    top: calc(var(--logo-top) + .2em);
+}
+
+#logo-2,
+#logo-2-shadow {
+    width: 11.5rem;
+}
+
+#logo-2 {
+    top: calc(var(--logo-top) + var(--logo-space));
+}
+
+#logo-2-shadow{
+    top: calc(var(--logo-top) + var(--logo-space) + .2em);
+}
+
+#logo-3,
+#logo-3-shadow {
+    width: 9rem;
+}
+
+#logo-3 {
+    top: calc(var(--logo-top) + calc(var(--logo-space) * 2) + .2em);
+}
+
+#logo-3-shadow {
+    top: calc(var(--logo-top) + calc(var(--logo-space) * 2) + .4em);
+}
+
+#logo-4 {
+    top: calc(var(--logo-top) + calc(var(--logo-space) * 3) + .2em);
+}
+
+#logo-4,
+#logo-4-shadow {
+    width: 11rem;
+}
+
+#logo-4-shadow {
+    top: calc(var(--logo-top) + calc(var(--logo-space) * 3) + .4em);
+}
+
+#panel-right {
+    flex-grow: 1;
+}
+
+#right-head {
+    background-image: url("./img/kamentop.png");
+    background-image: linear-gradient(to right, #c6cec8, transparent 30%), url("./img/kamentop.png");
+    background-color: #c6cec8;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-radius: 0 20px 0 0;
+    height: 160px;
+    justify-content: space-between;
+    
+    
+}
+
+#head-quote {
+    height: 75%;
+    min-width: 300px;
+    margin: 0 5%;
+    align-self: center;
+    background-color: rgba(0, 0 , 0, 0.5);
+    z-index: 0;
+}
+
+
+
+#head-call {
+    flex-grow: 1;
+    max-width: 58%;
+    min-width: 48%;
+}
+
+.call {
+    height: 80px;
+    position: relative;
+    font-family: 'aBigDeal';
+    font-size: 4em;
+    padding: 10px .5em 0;
+    
+    
+}
+
+.call:before {
+    position: absolute;
+    border: 40px solid transparent;
+    content: "";
+    left: -80px;
+    top: 0px;
+}
+
+#call-top:before {
+    border-right-color: var(--logo-red);
+}
+
+#call-bottom:before {
+    border-right-color: var(--logo-green);
+}
+
+#call-top {
+    border-radius: 0 20px 0 0;
+    background-color: var(--logo-red);
+}
+
+#call-bottom {
+    background-color: var(--logo-green);
+}
+
+#right-body {
+    background-color: rgb(66, 117, 66);
+    height: 25em;
+    border-radius: 10px 0 0 0;
+}
+
+#right-foot {
+    background-color: black;
+    height: 10em;
+}
