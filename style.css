@@ -1,20 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 @font-face {
     font-family: "aBigDeal";
     src: url("./fonts/aBigDeal.ttf");
 }
 
 :root {
-    --logo-red: rgb(238, 16, 16);
-    --logo-green: rgb(22, 139, 22);
+    --logo-red: rgb(228, 22, 22);
+    --logo-green: rgb(32, 192, 32);
+    --silver: rgb(199, 199, 199);
     --logo-top: .75em;
-    --logo-red-left: .75em;
-    --logo-green-left: 1.5em;
+    --logo-red-left: .4em;
+    --logo-green-left: 2em;
     --logo-space: 1.5em;
 }
 
 body {
-    background-color: rgb(118, 146, 118);
+    font-family: 'Roboto', sans-serif;
+    background-color: rgb(46, 56, 46);
     margin: 0;
+    padding: 0;
     height: 98vh;
     align-items: center;
 }
@@ -27,6 +32,71 @@ body,
 
 .flex-col {
     flex-direction: column;
+}
+
+input, label{
+    display: block;
+}
+
+input,
+select,
+button {
+    font-family: inherit;
+    width: 200px;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+input,
+select {
+    height: 2em;
+}
+
+input:focus,
+select:focus {
+    outline: 1px solid black;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+p { 
+    margin: 0;
+}
+
+button {
+    margin: 0;
+    background-color: rgb(140, 207, 140);
+    border: 2px solid rgb(29, 68, 29);
+    width: 150px;
+    padding: 7px;
+    border-radius: 5px;
+    font-weight: bolder;
+}
+
+label {
+    font-size: 10pt;
+    margin: 0;
+    padding: 0;
+    text-shadow: black 1px 1px 1px;
+}
+
+fieldset {
+    border: 2px solid black;
+    background-color: rgb(190, 212, 190);
+}
+
+legend {
+    color: var(--silver);
+    font-weight: bold;
+    background-color: black;
+    padding: 3px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 5px;
+    
 }
 
 #panel-left {
@@ -48,10 +118,14 @@ body,
     margin-top: 0;
     margin-bottom: 0;
     flex-grow: 1;
-    max-width: 80%;
+    max-width: 1200px;
     border-radius: 20px;
 
 }
+
+/* 
+    All logo styling is as follows:
+*/
 
 .flyer {
     font-family: 'aBigDeal';
@@ -107,7 +181,9 @@ body,
 .fly-red {
     background-color: var(--logo-red);
     left: calc(var(--logo-red-left));
+    text-shadow: 2px 2px var(--logo-green);
 }
+
 .fly-red:before,
 .fly-red:after {
     border-top-color: var(--logo-red);
@@ -117,6 +193,7 @@ body,
 .fly-green {
     background-color: var(--logo-green);
     left: calc(var(--logo-green-left));
+    text-shadow: 2px 2px var(--logo-red);
 }
 
 .fly-green:before,
@@ -165,7 +242,7 @@ body,
 }
 
 #logo-4 {
-    top: calc(var(--logo-top) + calc(var(--logo-space) * 3) + .2em);
+    top: calc(var(--logo-top) + calc(var(--logo-space) * 3) + .1em);
 }
 
 #logo-4,
@@ -174,12 +251,22 @@ body,
 }
 
 #logo-4-shadow {
-    top: calc(var(--logo-top) + calc(var(--logo-space) * 3) + .4em);
+    top: calc(var(--logo-top) + calc(var(--logo-space) * 3) + .3em);
 }
 
+/* 
+    --end logo styling--
+*/
+
 #panel-right {
+    min-width: 715px;
     flex-grow: 1;
 }
+
+/*
+    Top section of the right panel
+*/
+
 
 #right-head {
     background-image: url("./img/kamentop.png");
@@ -189,36 +276,29 @@ body,
     background-repeat: no-repeat;
     border-radius: 0 20px 0 0;
     height: 160px;
-    justify-content: space-between;
-    
-    
+    justify-content: space-between;    
 }
 
-#head-quote {
-    height: 75%;
-    min-width: 300px;
-    margin: 0 5%;
-    align-self: center;
-    background-color: rgba(0, 0 , 0, 0.5);
-    z-index: 0;
-}
-
-
+/*
+    top portion's pointing arrows:
+*/
 
 #head-call {
     flex-grow: 1;
-    max-width: 58%;
-    min-width: 48%;
+    max-width: 55%;
+    min-width: 50%;
 }
 
 .call {
     height: 80px;
     position: relative;
     font-family: 'aBigDeal';
-    font-size: 4em;
-    padding: 10px .5em 0;
-    
-    
+    font-size: 4em;    
+}
+
+#call-top,
+#call-bottom-left {
+    padding: 10px 20px 0;
 }
 
 .call:before {
@@ -240,19 +320,156 @@ body,
 #call-top {
     border-radius: 0 20px 0 0;
     background-color: var(--logo-red);
+    text-shadow: 5px 3px var(--logo-green);
 }
 
 #call-bottom {
+    justify-content: space-between;
     background-color: var(--logo-green);
+    text-shadow: 5px 3px var(--logo-red);
 }
 
+#call-bottom-right {
+    background-color: var(--logo-red);
+    width: 20px;
+}
+
+/*
+    --End of top's arrow styling
+*/
+
 #right-body {
-    background-color: rgb(66, 117, 66);
-    height: 25em;
+    background-color: black;
+    height: 500px;
     border-radius: 10px 0 0 0;
+    justify-content: space-between;
+}
+
+#body-top {
+    background-color: var(--silver);
+    margin: 0;
+    padding: 5px;
+    height: 25%;
+    border-radius: 20px 20px 0 0;
+}
+
+#form-top {
+    background-color: rgb(226, 110, 110);
+    margin: 0;
+    height: 50%;
+    padding: 30px;
+}
+
+#form-bottom {
+    background-color: var(--silver);
+    border-radius: 0 0 20px 20px;
+    height: 25%;
+    padding-left: 20px;
+    padding-top: 5px;
+}
+
+#quote-row {
+    justify-content:space-around;
+}
+
+#quote-row>p {
+    margin-top: 8px;
+    width: 225px;
+    font-size: .9rem;
+    font-weight: bold;
+}
+
+#body-top>h1 {
+    font-family: 'aBigDeal';
+    white-space: nowrap;
+    font-size: 50px;
+    margin: 10px;
+    align-self: center;
+    text-shadow: 5px 5px var(--logo-red), 10px 10px var(--logo-green);
+}
+
+form {
+    width: 100%;   
+    margin: 10px;
+}
+
+input + span {
+    position: relative;
+}
+
+fieldset>p {
+    font-size: .9rem;
+}
+
+input:required + span::after {
+    font-size: 1rem;
+    position: absolute;
+    content: "*";
+    color: black;
+    font-weight: bold;
+    padding: 5px 10px;
+    top: -50px;
+    right: -205px;
+}
+
+#nomatch {
+    font-size: .75rem;
+    position: absolute;
+    color: red;   
+}
+
+#form-bottom>p {
+    font-size: .9rem;
+}
+
+.form-row { 
+    gap: 50px;
+    margin-bottom: 25px;
+}
+
+#mid-stripe-green {
+    background-color: var(--logo-green);
+    width: 20px;
+    height: 100%;
+}
+
+#mid-stripe-red {
+    background-color: var(--logo-red);
+    width: 20px;
+    height: 100%;
+}
+
+#mid-low-stripe {
+    background-color: black;
+    padding-left: 10px;
+    justify-content: space-between;
+}
+
+#mlst-left {
+    background-color: var(--logo-green);
+    height: 20px;
+    width: 100%;
+}
+
+#mlst-right {
+    background-color: var(--logo-red);
+    width: 21px;
+    height: 20px;
+}
+
+#mid-low-stripe-bottom {
+    background-color: var(--logo-red);
+    border-radius: 0 0 10px 10px;
+    height: 20px;
+    width: 100%;
 }
 
 #right-foot {
+    justify-content: center;
+    align-items: center;
+    color: var(--silver);
+    font-size: .75rem;
     background-color: black;
-    height: 10em;
+    border-radius: 0 0 20px 0;;
+    height: 100px;
 }

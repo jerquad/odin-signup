@@ -23,15 +23,91 @@
             </div>
             <div id="panel-right" class="flex-col">
                 <div id="right-head" class="flex">
-                    <div id="head-quote"></div>
+                    <div></div>
                     <div id="head-call" class="flex-col">
                         <div id="call-top" class="call">JOIN</div>
-                        <div id="call-bottom" class="call">TODAY!</div>
+                        <div id="call-bottom" class="flex call">
+                            <div id="call-bottom-left">TODAY!</div>
+                            <div id="call-bottom-right"></div>
+                        </div>
 
                     </div>
                 </div>
-                <div id="right-body"></div>
-                <div id="right-foot"></div>
+                <div id="right-body" class="flex">                   
+                    <form>
+                        <div id="body-top" class="flex-col">
+                            <div id="quote-row" class="flex">                            
+                                <p>Are you sick and tired of masked facists in your town?</p>
+                                <p>Monsters brainwashing, kidnapping, or melting your siblings and parents?</p>
+                                <p>Are you passionate about messenger pigeons?</p>
+                            </div>
+                            <h1>IT'S TIME TO STAND UP!</h1>
+                        </div>
+                        <div id="form-top" class="flex-col">
+                            <fieldset>
+                            <legend>Take A Stand!</legend>
+                                <p>All required fields are marked with '*'.</p>
+                                <div id="form-row-one" class="flex form-row">
+                                    <div>
+                                        <label for="firstname">FIRST NAME</label>
+                                        <input id="firstname" name="firstname" type="text">
+                                    </div>
+                                    <div>
+                                        <label for="lastname">LAST NAME</label>
+                                        <input id="lastname" name="lastname" type="text">
+                                    </div>
+                                </div>
+                                <div id="form-row-two" class="flex form-row">
+                                    <div>
+                                        <label for="email">E-MAIL</label>
+                                        <input id="email" name="email" type="email" required>
+                                        <span></span>
+                                    </div>
+                                    <div>
+                                        <label for="age">AGE</label>
+                                        <select id="age" name="age">
+                                            <option value="0">Under 5</option>
+                                            <option value="1">5-10</option>
+                                            <option value="2">11-15</option>
+                                            <option value="3">Over 15</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div id="form-row-three" class="flex form-row">
+                                    <div>
+                                        <label for="pw">PASSWORD</label>
+                                        <input id="pw" name="pw" type="password" required>
+                                        <span></span>
+                                    </div>
+                                    <div>
+                                        <label for="pwconf">CONFIRM PASSWORD</label>
+                                        <input id="pwconf" name="pwconf" type="password" required>
+                                        <span></span>
+                                        <span id="nomatch" style="visibility: hidden">passwords do not match</span>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <div id="form-bottom">
+                            <button type="submit">Sign Up</button>
+                            <p>
+                                Already a member? <a href="#">log in</a>
+                            </p>
+                        </div>
+                    </form>
+                    <div id="mid-side-stripe" class="flex">
+                        <div id="mid-stripe-green"></div>
+                        <div id="mid-stripe-red"></div>
+                    </div>
+                </div>
+                <div id="mid-low-stripe">
+                    <div id="mid-low-stripe-top" class="flex">
+                        <div id="mlst-left"></div>
+                        <div id="mlst-right"></div>
+                    </div>
+                    <div id="mid-low-stripe-bottom"></div>
+                </div>
+                <div id="right-foot" class="flex">Kamen Rider is © Toei Company ltd. This site is in no way affiliated with Kamen Rider</div>
             </div> 
         </div>
         <div id="main-foot"></div>
